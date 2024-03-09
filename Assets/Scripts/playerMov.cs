@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMov : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class playerMov : MonoBehaviour
     float h;
     public float speed;
     Rigidbody2D rb;
+    public float wallDetectionDistance = 0.2f;
 
     public float jumpforce;
     public Transform groundCheck;
@@ -92,6 +94,7 @@ public class playerMov : MonoBehaviour
     {
         if (isGrounded)
         {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
         }
         else if (isSliding)
@@ -110,5 +113,14 @@ public class playerMov : MonoBehaviour
     {
         if (h < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
         if (h > 0.01f) transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if(collision.tag == "death")
+        {
+            SceneManager.LoadScene("deathScene");
+        }
     }
 }
