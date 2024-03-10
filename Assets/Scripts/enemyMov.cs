@@ -8,7 +8,7 @@ public class enemyMov : MonoBehaviour
     //if Red enemy true;
     public bool smartEnemy;
     private float Enemyspeed;
-    
+
     bool switchD = false;
     // Start is called before the first frame update
     void Start()
