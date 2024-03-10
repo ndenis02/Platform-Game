@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,122 +6,166 @@ using UnityEngine.SceneManagement;
 
 public class playerMov : MonoBehaviour
 {
-    //movement values
-    float h;
-    public float speed;
-    Rigidbody2D rb;
-    public float wallDetectionDistance = 0.2f;
+    public Rigidbody2D rb;
+    public float speed = 5;
 
-    public float jumpforce;
-    public Transform groundCheck;
-    public LayerMask groundLayer;
-    bool isGrounded;
-    bool jump;
+    private float movingInput;
 
-    [Header("Wall Jump System")]
-    public Transform wallCheck;
-    bool isWallTouch;
-    bool isSliding;
-    public float wallSliddingSpeed;
-    public float wallJumpDuration;
-    public Vector2 WallJumpForce;
-    bool WallJumping;
+    [SerializeField] private bool FacingRight = true;
+    [SerializeField] private float jumpForce = 12;
 
-    //Rigidbody reference
+    private bool canMove = true;
 
-    //jump check parameters
-
-    //Sounds
+    private bool canWallJump = true;
+    private bool canDoubleJump;
+    private bool canWallSlide;
+    private bool isWallSliding;
     AudioSource jumpSound;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>(); 
-    }
+    private int facingDirection = 1;
+    [SerializeField] private Vector2 wallJumpDirection;
+
+
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius;
+    [SerializeField] private LayerMask WhatIsGround;
+    private bool isGrounded;
+
+
+    [SerializeField] private Transform wallcheck;
+    [SerializeField] private float wallcheckDistance;
+    private bool isWallDetected;
+
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         jumpSound = GetComponent<AudioSource>();
     }
 
-    private void Update()
+    void Update()
     {
-        h = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jump = true;
-        }
+        checkInput();
+        flipController();
+        CollisionCheck();
 
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.8f, 0.3f), 0, groundLayer);
-        isWallTouch = Physics2D.OverlapBox(wallCheck.position, new Vector2(0.3f, 1f), 0, groundLayer);
-       
+    }
 
-        if (isWallTouch && !isGrounded && h !=0)
-        {
-            isSliding = true;
-        }
-        else
-        {
-            isSliding = false;
-        }
-        flip();
+
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        jumpSound.Play();
     }
 
     private void FixedUpdate()
     {
-
-        if (jump)
+        if (isWallDetected && canWallSlide)
         {
-            Jump();
-            jumpSound.Play();
-        }
-        if (isSliding)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSliddingSpeed, float.MaxValue));
-        }
-
-        if (WallJumping)
-        {
-            rb.velocity = new Vector2(-h * WallJumpForce.x, WallJumpForce.y);
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.01f);
         }
         else
         {
-            rb.velocity = new Vector2(h * speed, rb.velocity.y);
+            isWallSliding = false;
+            Move();
         }
-    }
-
-
-    void Jump()
-    {
         if (isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
+            canMove = true;
+            canDoubleJump = true;
         }
-        else if (isSliding)
-        {
-            WallJumping = true;
-            Invoke("StopWallJumping", wallJumpDuration);
-        }
-        jump = false;
-    }
-    void StopWallJumping()
-    {
-        WallJumping = false;
     }
 
-    void flip()
+    private void checkInput()
     {
-        if (h < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
-        if (h > 0.01f) transform.localScale = new Vector3(1, 1, 1);
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            JumpButton();
+
+        }
+        if (canMove)
+            movingInput = Input.GetAxis("Horizontal");
+
+
+    }
+    private void Move()
+    {
+        if (canMove)
+            rb.velocity = new Vector2(movingInput * speed, rb.velocity.y);
+    }
+
+    private void WallJump()
+    {
+        canMove = false;
+        Vector2 direction = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
+        rb.AddForce(direction, ForceMode2D.Impulse);
+    }
+
+    private void JumpButton()
+    {
+        if (isWallSliding && canWallJump)
+        {
+            WallJump();
+        }
+        else if (isGrounded)
+        {
+
+            Jump();
+        }
+        else if (canDoubleJump)
+        {
+            canDoubleJump = false;
+            Jump();
+        }
+    }
+
+    private void Flip()
+    {
+        facingDirection = facingDirection * -1;
+        FacingRight = !FacingRight;
+        transform.Rotate(0, 180, 0);
+    }
+    private void flipController()
+    {
+
+        if (isGrounded && isWallDetected)
+        {
+            if (FacingRight && movingInput < 0)
+                Flip();
+            else if (!FacingRight && movingInput > 0)
+                Flip();
+        }
+        if (rb.velocity.x > 0 && !FacingRight)
+            Flip();
+        else if (rb.velocity.x < 0 && FacingRight)
+            Flip();
+    }
+    private void CollisionCheck()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, WhatIsGround);
+        isWallDetected = Physics2D.Raycast(wallcheck.position, Vector2.right, wallcheckDistance, WhatIsGround);
+
+        if (!isGrounded && rb.velocity.y < 0)
+            canWallSlide = true;
+
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.DrawLine(wallcheck.position, new Vector3(wallcheck.position.x + wallcheckDistance, wallcheck.position.y, wallcheck.position.z));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if(collision.tag == "death")
+        if (collision.tag == "death")
         {
             SceneManager.LoadScene("deathScene");
         }
     }
+
 }
