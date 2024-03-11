@@ -64,7 +64,7 @@ public class playerMov : MonoBehaviour
         if (isWallDetected && canWallSlide)
         {
             isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.01f);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -3.5f));
         }
         else
         {
