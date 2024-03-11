@@ -16,8 +16,8 @@ TagManager:
   - wall
   - ground
   - walls
-  - 
-  - 
+  - enemyBoundary
+  - enemy
   - 
   - 
   - 
