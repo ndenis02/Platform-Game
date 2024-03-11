@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,31 +25,38 @@ public class playerMov : MonoBehaviour
     private int facingDirection = 1;
     [SerializeField] private Vector2 wallJumpDirection;
 
+
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask WhatIsGround;
     private bool isGrounded;
 
+
     [SerializeField] private Transform wallcheck;
     [SerializeField] private float wallcheckDistance;
     private bool isWallDetected;
 
-    private Collider2D enemyCollider;
-    public string ignoreColliderTag = "enemyBoundary";
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         jumpSound = GetComponent<AudioSource>();
-        enemyCollider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        CheckInput();
-        FlipController();
+        checkInput();
+        flipController();
         CollisionCheck();
 
+    }
+
+
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        jumpSound.Play();
     }
 
     private void FixedUpdate()
@@ -69,16 +78,20 @@ public class playerMov : MonoBehaviour
         }
     }
 
-    private void CheckInput()
+    private void checkInput()
     {
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             JumpButton();
+
         }
         if (canMove)
             movingInput = Input.GetAxis("Horizontal");
-    }
 
+
+    }
     private void Move()
     {
         if (canMove)
@@ -100,6 +113,7 @@ public class playerMov : MonoBehaviour
         }
         else if (isGrounded)
         {
+
             Jump();
         }
         else if (canDoubleJump)
@@ -109,21 +123,15 @@ public class playerMov : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        jumpSound.Play();
-    }
-
     private void Flip()
     {
         facingDirection = facingDirection * -1;
         FacingRight = !FacingRight;
         transform.Rotate(0, 180, 0);
     }
-
-    private void FlipController()
+    private void flipController()
     {
+
         if (isGrounded && isWallDetected)
         {
             if (FacingRight && movingInput < 0)
@@ -136,7 +144,6 @@ public class playerMov : MonoBehaviour
         else if (rb.velocity.x < 0 && FacingRight)
             Flip();
     }
-
     private void CollisionCheck()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, WhatIsGround);
@@ -150,43 +157,22 @@ public class playerMov : MonoBehaviour
         if (!isGrounded && rb.velocity.y < 0)
             canWallSlide = true;
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Vector3 lineDirection = FacingRight ? Vector3.right : Vector3.left;
+
+        // Draw the line in the determined direction
+        Gizmos.DrawLine(wallcheck.position, wallcheck.position + lineDirection * wallcheckDistance);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("death"))
+
+        if (collision.tag == "death")
         {
             SceneManager.LoadScene("deathScene");
         }
-        if (collision.CompareTag(ignoreColliderTag))
-        {
-            Debug.Log("Trigger Enter: " + collision.gameObject.name);
-            DisableCollisionsWithPlayer(collision.gameObject);
-        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag(ignoreColliderTag))
-        {
-            EnableCollisionsWithPlayer(collision.gameObject);
-        }
-    }
-
-    private void DisableCollisionsWithPlayer(GameObject playerObject)
-    {
-        Collider2D[] playerColliders = playerObject.GetComponents<Collider2D>();
-        foreach (Collider2D playerCollider in playerColliders)
-        {
-            Physics2D.IgnoreCollision(enemyCollider, playerCollider, true);
-        }
-    }
-
-    private void EnableCollisionsWithPlayer(GameObject playerObject)
-    {
-        Collider2D[] playerColliders = playerObject.GetComponents<Collider2D>();
-        foreach (Collider2D playerCollider in playerColliders)
-        {
-            Physics2D.IgnoreCollision(enemyCollider, playerCollider, false);
-        }
-    }
 }
