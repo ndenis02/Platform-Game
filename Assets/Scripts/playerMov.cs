@@ -147,16 +147,23 @@ public class playerMov : MonoBehaviour
     private void CollisionCheck()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, WhatIsGround);
-        isWallDetected = Physics2D.Raycast(wallcheck.position, Vector2.right, wallcheckDistance, WhatIsGround);
+
+        // Adjust ray direction based on facing direction
+        Vector2 rayDirection = FacingRight ? Vector2.right : Vector2.left;
+
+        // Cast a ray to check for walls
+        isWallDetected = Physics2D.Raycast(wallcheck.position, rayDirection, wallcheckDistance, WhatIsGround);
 
         if (!isGrounded && rb.velocity.y < 0)
             canWallSlide = true;
-
     }
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        Gizmos.DrawLine(wallcheck.position, new Vector3(wallcheck.position.x + wallcheckDistance, wallcheck.position.y, wallcheck.position.z));
+        Vector3 lineDirection = FacingRight ? Vector3.right : Vector3.left;
+
+        // Draw the line in the determined direction
+        Gizmos.DrawLine(wallcheck.position, wallcheck.position + lineDirection * wallcheckDistance);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
