@@ -298,13 +298,17 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6491083247611414899, guid: fda3824d334dcd34b9a5ba9802e0d175, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7082800745881340869, guid: fda3824d334dcd34b9a5ba9802e0d175, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.967809
+      value: 2.3851812
       objectReference: {fileID: 0}
     - target: {fileID: 7082800745881340869, guid: fda3824d334dcd34b9a5ba9802e0d175, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6262884
+      value: 1.9712242
       objectReference: {fileID: 0}
     - target: {fileID: 7082800745881340869, guid: fda3824d334dcd34b9a5ba9802e0d175, type: 3}
       propertyPath: m_LocalScale.z
@@ -437,19 +441,19 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: f1d07c9c041683b448269a30d343b1a0, type: 2}
     - target: {fileID: 2224833337224485095, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: orthographic size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2694627999564921139, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0025691
+      value: 1.0113128
       objectReference: {fileID: 0}
     - target: {fileID: 2694627999564921139, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.0025691
+      value: 1.0113128
       objectReference: {fileID: 0}
     - target: {fileID: 2694627999564921139, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0025691
+      value: 1.0113128
       objectReference: {fileID: 0}
     - target: {fileID: 2694627999564921139, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -509,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095946229001736665, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6095946229001736665, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: wallcheck
