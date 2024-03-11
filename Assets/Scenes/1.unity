@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095946229001736665, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: wallcheckDistance
-      value: 0.22
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 6095946229001736665, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: WhatIsGround.m_Bits
@@ -856,12 +856,16 @@ PrefabInstance:
       value: -0.432
       objectReference: {fileID: 0}
     - target: {fileID: 6678463418415126253, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678463418415126253, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.13800001
+      value: 0.21903361
       objectReference: {fileID: 0}
     - target: {fileID: 6678463418415126253, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.404
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 6678463418415126253, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: m_LocalPosition.y
