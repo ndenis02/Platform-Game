@@ -1016,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095946229001736665, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: wallJumpDirection.x
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6095946229001736665, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       propertyPath: wallJumpDirection.y
