@@ -11262,7 +11262,7 @@ GameObject:
   - component: {fileID: 1413527869}
   m_Layer: 0
   m_Name: square
-  m_TagString: death
+  m_TagString: death2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
