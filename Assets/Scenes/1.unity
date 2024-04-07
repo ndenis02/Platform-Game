@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 277120507}
   - component: {fileID: 277120506}
   - component: {fileID: 277120505}
-  - component: {fileID: 277120504}
+  - component: {fileID: 277120508}
   m_Layer: 0
   m_Name: Square
   m_TagString: death
@@ -173,18 +173,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &277120504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277120503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8dfc600cb28cf94aa62862d261700ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &277120505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -297,6 +285,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277120508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277120503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5866d169e1c84064b9267c0788dee25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &366998341
 GameObject:
   m_ObjectHideFlags: 0
