@@ -361,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789893135301745621, guid: baedd4ffb6886494fb0029a5499e97d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.95
+      value: -3.67
       objectReference: {fileID: 0}
     - target: {fileID: 5789893135301745621, guid: baedd4ffb6886494fb0029a5499e97d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -458,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789893135301745621, guid: baedd4ffb6886494fb0029a5499e97d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.95
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 5789893135301745621, guid: baedd4ffb6886494fb0029a5499e97d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1168,7 +1168,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.98, y: 1.84, z: 0}
-  m_LocalScale: {x: 10.8141165, y: 6.276658, z: 1}
+  m_LocalScale: {x: 10.8141165, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 948527692}
@@ -3983,6 +3983,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5606841986820854389, guid: 23cba091526973746b0b806f00076145, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606841986820854389, guid: 23cba091526973746b0b806f00076145, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149483158670021613, guid: 23cba091526973746b0b806f00076145, type: 3}
+      propertyPath: m_margin.y
+      value: 0.000022888184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149483158670021613, guid: 23cba091526973746b0b806f00076145, type: 3}
+      propertyPath: m_margin.z
+      value: -13.126953
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4066,12 +4082,20 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8539808445317787879, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539808445317787879, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539808445317787879, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.191927
       objectReference: {fileID: 0}
     - target: {fileID: 8539808445317787879, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.34101307
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 8539808445317787879, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: m_LocalPosition.z
