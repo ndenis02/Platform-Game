@@ -9,20 +9,20 @@ public class CheckpointScript : MonoBehaviour
     private BoxCollider2D checkpointcollider;
     // Start is called before the first frame update
 
-     void Awake()
+    void Awake()
     {
         checkpointcollider = GetComponent<BoxCollider2D>();
-        respawn = GameObject.FindGameObjectWithTag("respawn").GetComponent<respawnscript>();   
+        respawn = GameObject.FindGameObjectWithTag("respawn").GetComponent<respawnscript>();
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
