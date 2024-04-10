@@ -34,7 +34,11 @@ public class enemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collider with" + gameObject);
+
+            SceneManager.LoadScene("deathScene2");
+
         }
+
     }
 
     void FlipSprite()

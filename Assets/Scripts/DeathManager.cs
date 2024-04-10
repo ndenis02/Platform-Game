@@ -31,14 +31,13 @@ public class DeathManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
 
-        // Get the LevelManager instance
         levelManager = LevelManager.Instance;
     }
 

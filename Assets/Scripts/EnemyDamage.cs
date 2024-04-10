@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class EnemyDamage : MonoBehaviour
         if(collision.gameObject.tag =="Player")
         {
             playerHealth.TakeDamage(damage);
+
+            
         }
     }
    
