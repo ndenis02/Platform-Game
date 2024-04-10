@@ -8,6 +8,8 @@ TagManager:
   - death
   - death2
   - Weak Point
+  - Checkpoint
+  - respawn
   layers:
   - Default
   - TransparentFX
