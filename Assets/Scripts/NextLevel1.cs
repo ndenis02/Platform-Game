@@ -32,7 +32,7 @@ public class NextLevel1 : MonoBehaviour
         else
         {
             Debug.LogWarning("No next scene available. Game completion logic can be added here.");
-            // You can add game completion logic here, such as showing a game completion screen.
+            
         }
     }
 }
