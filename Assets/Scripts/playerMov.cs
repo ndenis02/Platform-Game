@@ -174,10 +174,10 @@ public class playerMov : MonoBehaviour
             SceneManager.LoadScene("deathScene");
         }
 
-        else if (collision.tag == "death2")
-        {
-            SceneManager.LoadScene("deathScene2");
-        }
+        //else if (collision.tag == "death2")
+        //{
+        //    SceneManager.LoadScene("deathScene2");
+        //}
     }
 
 }
