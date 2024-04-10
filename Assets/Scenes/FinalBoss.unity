@@ -7100,6 +7100,22 @@ PrefabInstance:
       propertyPath: bulletPos
       value: 
       objectReference: {fileID: 2049250651}
+    - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      propertyPath: m_Size.x
+      value: 0.33619127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2317243
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0051853987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0028567472
+      objectReference: {fileID: 0}
     - target: {fileID: 8465809920793261288, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.47
@@ -7140,6 +7156,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8715784645842682960, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 567216123}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
