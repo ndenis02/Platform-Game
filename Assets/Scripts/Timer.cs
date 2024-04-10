@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class Timer : MonoBehaviour
 {
@@ -17,29 +16,20 @@ public class Timer : MonoBehaviour
     public bool hasLimit;
     public float timerLimit;
 
-    [Header("Format Settings")]
-    public bool hasFormat;
-    public TimerFormats format;
-    private Dictionary<TimerFormats, string> timerFormats = new Dictionary<TimerFormats, string>();
+    private ITimerStrategy timerStrategy;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        timerFormats.Add(TimerFormats.Whole, "0");
-        timerFormats.Add(TimerFormats.TenthDecimal, "0.0");
-        timerFormats.Add(TimerFormats.HundrethDecimal, "0.00");
+        SetTimerStrategy();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       currentTime = countDown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
+        timerStrategy.UpdateTimer(ref currentTime, Time.deltaTime);
 
-        if (hasLimit  && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit)))
+        if (hasLimit && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit)))
         {
             currentTime = timerLimit;
-            SetTimerText();
             timerText.color = Color.red;
             enabled = false;
         }
@@ -48,14 +38,40 @@ public class Timer : MonoBehaviour
 
     private void SetTimerText()
     {
-        timerText.text = hasFormat ? currentTime.ToString(timerFormats[format]) : currentTime.ToString();
+        timerText.text = currentTime.ToString("F2"); // Fixed two decimal places
     }
-    
+
+    private void SetTimerStrategy()
+    {
+        if (countDown)
+        {
+            timerStrategy = new CountDownStrategy();
+        }
+        else
+        {
+            timerStrategy = new CountUpStrategy();
+        }
+    }
 }
 
-public enum TimerFormats
+public interface ITimerStrategy
 {
-    Whole,
-    TenthDecimal,
-    HundrethDecimal
+    void UpdateTimer(ref float currentTime, float deltaTime);
+}
+
+public class CountUpStrategy : ITimerStrategy
+{
+    public void UpdateTimer(ref float currentTime, float deltaTime)
+    {
+        currentTime += deltaTime;
+    }
+}
+
+public class CountDownStrategy : ITimerStrategy
+{
+    public void UpdateTimer(ref float currentTime, float deltaTime)
+    {
+        currentTime -= deltaTime;
+        if (currentTime < 0f) currentTime = 0f;
+    }
 }
