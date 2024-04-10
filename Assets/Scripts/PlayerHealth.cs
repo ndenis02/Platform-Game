@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
 
         if(health <=0){
-          SceneManager.LoadScene("deathScene");  
+          SceneManager.LoadScene("deathScene1");  
         }
 
     }
