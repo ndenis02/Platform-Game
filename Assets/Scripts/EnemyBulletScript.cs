@@ -8,7 +8,10 @@ public class EnemyBulletScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
     private float timer;
-    
+
+    public PlayerHealth playerHealth;
+    public int damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +36,10 @@ public class EnemyBulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            collision.gameObject.GetComponent<PlayerHealth>().health -= 10;
+            playerHealth.TakeDamage(damage);
         }
     }
 }

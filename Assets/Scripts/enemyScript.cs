@@ -31,13 +31,7 @@ public class enemyScript : MonoBehaviour
             direction = direction * -1;
             FlipSprite();
         }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Collider with" + gameObject);
-
-            SceneManager.LoadScene("deathScene2");
-
-        }
+        
 
     }
 

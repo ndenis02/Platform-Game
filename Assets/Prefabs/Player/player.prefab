@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 6219094676120758924}
   - component: {fileID: 2107107867197297274}
   - component: {fileID: 6095946229001736665}
+  - component: {fileID: 3529319457564640472}
   - component: {fileID: 6904864212338619112}
   - component: {fileID: 8895391819587176468}
   m_Layer: 0
@@ -317,16 +318,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fec329df08824aaf76b37ffe9e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   speed: 15
-  jumpforce: 30
+  FacingRight: 1
+  jumpForce: 12
+  wallJumpDirection: {x: 0, y: 0}
   groundCheck: {fileID: 6289370264946412097}
-  groundLayer:
+  groundCheckRadius: 0
+  WhatIsGround:
     serializedVersion: 2
-    m_Bits: 128
-  wallCheck: {fileID: 6678463418415126253}
-  wallSliddingSpeed: 1
-  wallJumpDuration: 0.1
-  WallJumpForce: {x: 10, y: 20}
+    m_Bits: 0
+  wallcheck: {fileID: 0}
+  wallcheckDistance: 0
+--- !u!114 &3529319457564640472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7832683652202785005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220bb222d405dee44805ecdb580db1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  health: 0
 --- !u!50 &6904864212338619112
 Rigidbody2D:
   serializedVersion: 4

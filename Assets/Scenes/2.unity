@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4040455135669623799, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1531753904}
     - target: {fileID: 6050702717025445159, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: m_Name
       value: Enemy
