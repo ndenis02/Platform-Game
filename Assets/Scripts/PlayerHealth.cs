@@ -20,7 +20,8 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0){
             Debug.Log("Collider with" + gameObject);
 
-            SceneManager.LoadScene("deathScene2");
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
         }
 
     }
