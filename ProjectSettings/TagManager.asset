@@ -10,6 +10,7 @@ TagManager:
   - Weak Point
   - Checkpoint
   - respawn
+  - ground
   layers:
   - Default
   - TransparentFX

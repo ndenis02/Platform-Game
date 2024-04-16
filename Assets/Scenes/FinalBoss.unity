@@ -337,6 +337,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8465809920793261288, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
   m_PrefabInstance: {fileID: 4445005771562383005}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721261542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7701504361415250493, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+  m_PrefabInstance: {fileID: 4445005771562383005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &721261544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721261542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fad1963c3d751f4585c8289cfb931e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  playerHealth: {fileID: 3529319457573125542}
 --- !u!1001 &738195344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,7 +715,7 @@ GameObject:
   - component: {fileID: 1777260995}
   m_Layer: 7
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7061,19 +7080,23 @@ PrefabInstance:
       objectReference: {fileID: 2049250651}
     - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       propertyPath: m_Size.x
-      value: 0.33619127
+      value: 0.3361914
       objectReference: {fileID: 0}
     - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       propertyPath: m_Size.y
-      value: 0.2317243
+      value: 0.28364486
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       propertyPath: m_Offset.x
-      value: 0.0051853987
+      value: 0.005185396
       objectReference: {fileID: 0}
     - target: {fileID: 4654492659750260162, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       propertyPath: m_Offset.y
-      value: 0.0028567472
+      value: -0.021312628
       objectReference: {fileID: 0}
     - target: {fileID: 8465809920793261288, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7125,7 +7148,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8465809920793261288, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2049250651}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7701504361415250493, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 721261544}
   m_SourcePrefab: {fileID: 100100000, guid: a08eac8751bb2ad4187688a828bf4170, type: 3}
 --- !u!4 &5140600377360498079 stripped
 Transform:
