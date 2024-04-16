@@ -10,7 +10,7 @@ public class EnemyBulletScript : MonoBehaviour
     private float timer;
 
     public PlayerHealth playerHealth;
-    public int damage;
+    public int damage = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +34,11 @@ public class EnemyBulletScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Debug.Log("enemy collided with " + gameObject);
             playerHealth.TakeDamage(damage);
         }
     }

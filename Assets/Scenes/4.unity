@@ -9536,9 +9536,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7832683652202785005, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1803648728}
     - targetCorrespondingSourceObject: {fileID: 3456332541341428806, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1803648726}
@@ -9592,25 +9589,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1803648727 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7832683652202785005, guid: 17b500559ee231e4ca941374b675e7d6, type: 3}
-  m_PrefabInstance: {fileID: 1803648722}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1803648728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803648727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220bb222d405dee44805ecdb580db1d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  health: 0
 --- !u!1001 &2040782870
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class EnemyStomp : MonoBehaviour
     {
         if(collision.gameObject.tag == "Weak Point")
         {
+            Debug.Log("Stomp collided with " + gameObject);
             Destroy(collision.gameObject);
         }
     }

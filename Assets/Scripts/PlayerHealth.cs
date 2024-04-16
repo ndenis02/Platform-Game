@@ -18,7 +18,6 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
 
         if(health <= 0){
-            Debug.Log("Collider with" + gameObject);
 
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
