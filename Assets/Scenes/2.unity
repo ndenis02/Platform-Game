@@ -172,8 +172,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4973925921146891277, guid: 791a7c58628c9a04097cbd672f8e0ece, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0098572
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973925921146891277, guid: 791a7c58628c9a04097cbd672f8e0ece, type: 3}
+      propertyPath: m_Size.y
+      value: 0.09049964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973925921146891277, guid: 791a7c58628c9a04097cbd672f8e0ece, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973925921146891277, guid: 791a7c58628c9a04097cbd672f8e0ece, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0010223389
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973925921146891277, guid: 791a7c58628c9a04097cbd672f8e0ece, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4658252
       objectReference: {fileID: 0}
     - target: {fileID: 8231700991817767956, guid: 791a7c58628c9a04097cbd672f8e0ece, type: 3}
       propertyPath: m_Name
@@ -565,8 +581,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5781936
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.05885887
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.24218968
       objectReference: {fileID: 0}
     - target: {fileID: 4040455135669623799, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: playerHealth
@@ -12181,8 +12209,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.57471335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.05885887
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275770198341275376, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.23891775
       objectReference: {fileID: 0}
     - target: {fileID: 4040455135669623799, guid: ee813198c03ae2a46bb888ffa08e82b1, type: 3}
       propertyPath: playerHealth
