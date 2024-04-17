@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 936860200692060559, guid: bf508ee4da247cf4798ceec11610e386, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3534258564171884739, guid: bf508ee4da247cf4798ceec11610e386, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -138,6 +142,14 @@ PrefabInstance:
     - target: {fileID: 4930219820322490222, guid: bf508ee4da247cf4798ceec11610e386, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993315701859711453, guid: bf508ee4da247cf4798ceec11610e386, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993315701859711453, guid: bf508ee4da247cf4798ceec11610e386, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.3549
       objectReference: {fileID: 0}
     - target: {fileID: 5536489904725271545, guid: bf508ee4da247cf4798ceec11610e386, type: 3}
       propertyPath: m_Name
